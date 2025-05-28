@@ -1,6 +1,6 @@
 public class Traitement {
 
-    public static String identifierContinent(String sVin, VinRegion saisieRegion) {
+    public static String identifierContinent(String sVin, VinStockageDonnee saisieRegion) {
         String sContinent = "inconnu";
 
         //Vérification de continent via Regex
@@ -22,7 +22,7 @@ public class Traitement {
     return sContinent;
     }
 
-    public static String identifierPays(String sContinent, String sVin, VinRegion saisieRegion) {
+    public static String identifierPays(String sContinent, String sVin, VinStockageDonnee saisieRegion) {
         String sPays = "Inconnu";
 
         switch (sContinent) {
@@ -217,7 +217,7 @@ public class Traitement {
     }
 
 
-    public static String identifierAnnee(String sVin, VinRegion saisieRegion) {
+    public static String identifierAnnee(String sVin, VinStockageDonnee saisieRegion) {
         String sAnnee = "Inconnu";
 
         switch (sVin.substring(9,10)){
@@ -316,5 +316,15 @@ public class Traitement {
 
         }
         return sAnnee;
+    }
+
+    public static String identifierFabricant(String sVin, VinStockageDonnee saisieRegion) {
+        String sFabricant = "inconnu";
+
+        //Vérification de Fabricant via Regex
+        if (saisieRegion.vinAudiSouthAfrica(sVin) == true) {
+            sFabricant = "AudiSouthAfrica";
+        }
+        return sFabricant;
     }
 }

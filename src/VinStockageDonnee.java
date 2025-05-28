@@ -1,4 +1,4 @@
-public class VinRegion {
+public class VinStockageDonnee {
 
     //Regex validité du VIN
     private String regexVin = "^[A-HJ-NPR-Z0-9]{17}$";
@@ -380,6 +380,12 @@ public class VinRegion {
     }
     public boolean vinTrinidadTobago(String sVin) {
         return sVin.matches(regexTrinidadTobago);
+    }
+
+    //Regex Fabricant
+    private String regexAudiSouthAfrica =  "^AAA.*";
+    public boolean vinAudiSouthAfrica(String sVin){
+        return sVin.matches(regexAudiSouthAfrica);
     }
 
 }

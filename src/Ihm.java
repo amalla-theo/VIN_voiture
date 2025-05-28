@@ -5,8 +5,7 @@ public class Ihm {
     public static void main(String[] args) {
         //Déclarations
 
-        VinRegion saisieRegion = new VinRegion();
-        VinFabricant saisieFabricant = new VinFabricant();
+        VinStockageDonnee saisieRegion = new VinStockageDonnee();
         String sVin = new String("0");
         String sContinent = null;
         String sPays = null;
@@ -31,11 +30,13 @@ public class Ihm {
         sContinent = Traitement.identifierContinent(sVin, saisieRegion);
         sPays = Traitement.identifierPays(sContinent, sVin, saisieRegion);
         sAnnee = Traitement.identifierAnnee(sVin, saisieRegion);
+        sFabricant = Traitement.identifierFabricant(sVin, saisieRegion);
         sSerie = sVin.substring(12,17);
 
         System.out.println("Continent: " + sContinent);
         System.out.println("Pays: " + sPays);
         System.out.println("Année: " + sAnnee);
+        System.out.println("Fabricant: " + sFabricant);
         System.out.println("Numéro de série: " + sSerie);
         }
     }
