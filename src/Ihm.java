@@ -327,7 +327,10 @@ public class Ihm {
             default:
                 sAnnee = "Année inconnue";
         }
-        System.out.println(sVin.substring(9,10));
-        System.out.println(sAnnee);
+
+
+        System.out.println("Continent: " + sContinent);
+        System.out.println("Pays: " + sPays);
+        System.out.println("Année: " + sAnnee);
         }
     }
