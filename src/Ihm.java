@@ -9,6 +9,7 @@ public class Ihm {
         String sContinent = null;
         String sPays = null;
         String sAnnee = null;
+        String sSerie = null;
 
 
         System.out.println("INTERFACE TEST\nVeuillez saisir un VIN: ");
@@ -329,8 +330,11 @@ public class Ihm {
         }
 
 
+        sSerie = sVin.substring(12,17);
+
         System.out.println("Continent: " + sContinent);
         System.out.println("Pays: " + sPays);
         System.out.println("Année: " + sAnnee);
+        System.out.println("Numéro de série: " + sSerie);
         }
     }
