@@ -383,10 +383,92 @@ public class VinStockageDonnee {
     }
 
     //Regex Fabricant
-    private String regexAudiSouthAfrica =  "^AAA.*";
-    public boolean vinAudiSouthAfrica(String sVin){
-        return sVin.matches(regexAudiSouthAfrica);
-    }
+    public class VinFabricant {
+
+        private String regexAudiVolkswagenSA = "^AAA[A-Z0-9].*"; // Audi fabriqué par Volkswagen South Africa
+        private String regexFAWVehicleManufacturersSA = "^AAK[A-Z0-9].*"; // FAW Vehicle Manufacturers South Africa
+        private String regexMANAutomotiveSouthAfrica = "^AAM[A-Z0-9].*"; // MAN Automotive (VW Truck & Bus inclus)
+        private String regexSAPVIN = "^AAP[A-Z0-9].*"; // VIN restampé par la police sud-africaine (SAPVIN ou AAPV)
+        private String regexVolkswagenSouthAfrica = "^AAV[A-Z0-9].*"; // Volkswagen South Africa
+        private String regexChallengerTrailerSA = "^AAW[A-Z0-9].*"; // Challenger Trailer Pty Ltd. (Afrique du Sud)
+        private String regexTRTecSA = "^AA9[A-Z0-9].*"; // TR-Tec Pty Ltd. (Afrique du Sud)
+        private String regexMitsubishiColtMercedesSA = "^ABJ[A-Z0-9].*"; // Mitsubishi Colt & Triton pickups (Mercedes-Benz SA)
+        private String regexBMWSouthernAfrica = "^ABM[A-Z0-9].*"; // BMW Southern Africa
+        private String regexIsuzuSouthAfrica = "^ACV[A-Z0-9].*"; // Isuzu Motors South Africa (depuis 2018)
+        private String regexHyundaiSouthAfrica = "^AC5[A-Z0-9].*"; // Hyundai Automotive South Africa
+        private String regexBeamishBeachBuggiesSA = "^AC9[A-Z0-9].*"; // Beamish Beach Buggies (Afrique du Sud)
+        private String regexMercedesBenzSA = "^ADB[A-Z0-9].*"; // Mercedes-Benz South Africa
+        private String regexUDTrucksSA = "^ADD[A-Z0-9].*"; // UD Trucks Southern Africa (Pty) Ltd.
+        private String regexGMSouthAfrica = "^ADM[A-Z0-9].*"; // GM South Africa (incluant Isuzu jusqu'en 2018)
+        private String regexNissanSouthAfrica = "^ADN[A-Z0-9].*"; // Nissan South Africa (Pty) Ltd.
+        private String regexRenaultSanderoSA = "^ADR[A-Z0-9].*"; // Renault Sandero fabriqué par Nissan SA
+        private String regexTataSouthAfrica = "^ADX[A-Z0-9].*"; // Tata Automobile Corporation South Africa Ltd.
+        private String regexBackdraftRacingSA = "^AE9[A-Z0-9].*"; // Backdraft Racing (Afrique du Sud)
+        private String regexFordSouthAfrica = "^AFA[A-Z0-9].*"; // Ford Motor Company of Southern Africa
+        private String regexMazdaSouthAfrica = "^AFB[A-Z0-9].*"; // Mazda BT-50 fabriqué par Ford South Africa
+        private String regexBAICSouthAfrica = "^AFD[A-Z0-9].*"; // BAIC Automotive South Africa
+        private String regexFiatSouthAfrica = "^AFZ[A-Z0-9].*"; // Fiat Auto South Africa
+        private String regexHinoSouthAfrica = "^AHH[A-Z0-9].*"; // Hino South Africa
+        private String regexHondaBalladeSA = "^AHM[A-Z0-9].*"; // Honda Ballade fabriqué par Mercedes-Benz SA (1982–2000)
+        private String regexToyotaSouthAfrica = "^AHT[A-Z0-9].*"; // Toyota South Africa Motors (Pty.) Ltd.
+        private String regexKIBOMotorcyclesKenya = "^BF9[A-Z0-9].*"; // KIBO Motorcycles (Kenya)
+        private String regexKiiraMotorsUganda = "^BUK[A-Z0-9].*"; // Kiira Motors Corporation (Ouganda)
+        private String regexMercedesBenzAlgeria = "^BR1[A-Z0-9].*"; // Mercedes-Benz Algérie (SAFAV MB)
+        private String regexFiatAlgeria = "^BRY[A-Z0-9].*"; // Fiat Algérie
+        private String regexAurusMotorsRussia = "^EAA[A-Z0-9].*"; // Aurus Motors (Russie)
+        private String regexEvoluteRussia = "^EAN[A-Z0-9].*"; // Evolute (Russie)
+        private String regexFordUSA = "^1F[A-Z0-9].*"; // Ford USA
+        private String regexGMUSA = "^1G[A-Z0-9].*"; // General Motors USA
+        private String regexChryslerUSA = "^1C[A-Z0-9].*"; // Chrysler USA
+        private String regexTeslaUSA = "^5Y[A-Z0-9].*"; // Tesla USA
+        private String regexHondaCanada = "^2H[A-Z0-9].*"; // Honda Canada
+        private String regexToyotaCanada = "^2T[A-Z0-9].*"; // Toyota Canada
+        private String regexVolkswagenMexico = "^3VW[A-Z0-9].*"; // Volkswagen Mexique
+        private String regexVolkswagenBrazil = "^9BW[A-Z0-9].*"; // Volkswagen Brésil
+        private String regexChevroletBrazil = "^9BG[A-Z0-9].*"; // Chevrolet Brésil
+        private String regexFiatArgentina = "^8AF[A-Z0-9].*"; // Fiat Argentine
+        private String regexFordArgentina = "^8A1[A-Z0-9].*"; // Ford Argentine
+        private String regexPlymouthMPVMitsubishi = "^JP4[A-Z0-9].*"; // Plymouth MPV/SUV fabriqué par Mitsubishi Motors
+        private String regexPlymouthTruckMitsubishi = "^JP7[A-Z0-9].*"; // Plymouth truck fabriqué par Mitsubishi Motors
+        private String regexIsuzuOasisHonda = "^JR2[A-Z0-9].*"; // Isuzu Oasis fabriqué par Honda
+        private String regexSuzukiATV = "^JSA[A-Z0-9].*"; // Suzuki ATV & Kawasaki KFX400 ATV, Suzuki car/SUV hors N. America
+        private String regexKawasakiSuzuki = "^JSK[A-Z0-9].*"; // Kawasaki KLX125/KLX125L motorcycle fabriqué par Suzuki
+        private String regexSuzukiKFX400 = "^JSL[A-Z0-9].*"; // '04-'06 Kawasaki KFX400 ATV fabriqué par Suzuki
+        private String regexSuzukiToyotaAcross = "^JST[A-Z0-9].*"; // Suzuki Across SUV fabriqué par Toyota
+        private String regexSuzukiMotorcycle = "^JS1[A-Z0-9].*"; // Suzuki moto & Kawasaki KLX400S/KLX400SR moto fabriqué par Suzuki
+        private String regexSuzukiCar = "^JS2[A-Z0-9].*"; // Suzuki voiture
+        private String regexSuzukiSUV = "^JS3[A-Z0-9].*"; // Suzuki SUV
+        private String regexSuzukiTruck = "^JS4[A-Z0-9].*"; // Suzuki camion
+        private String regexToyotaBus = "^JTB[A-Z0-9].*"; // Toyota bus
+        private String regexToyotaCar = "^JTD[A-Z0-9].*"; // Toyota voiture
+        private String regexToyotaMPVSUV = "^JTE[A-Z0-9].*"; // Toyota MPV/SUV
+        private String regexToyotaVanTruck = "^JTF[A-Z0-9].*"; // Toyota camion/van
+        private String regexToyotaMPVBus = "^JTG[A-Z0-9].*"; // Toyota MPV/bus
+        private String regexLexusCar = "^JTH[A-Z0-9].*"; // Lexus voiture
+        private String regexLexusSUV = "^JTJ[A-Z0-9].*"; // Lexus SUV
+        private String regexToyotaSUVSubaru = "^JTM[A-Z0-9].*"; // Toyota SUV, Subaru Solterra fabriqué par Toyota
+        private String regexToyotaTruckVan = "^JT4[A-Z0-9].*"; // Toyota camion/van
+        private String regexToyotaIncompleteVehicle = "^JT5[A-Z0-9].*"; // Toyota véhicule incomplet
+       // private String regexLexusSUV = "^JT6[A-Z0-9].*"; // Lexus SUV
+      //  private String regexLexusCar = "^JT8[A-Z0-9].*"; // Lexus voiture
+        private String regexMitsubishiFuso = "^JW6[A-Z0-9].*"; // Mitsubishi Fuso division de Mitsubishi Motors (jusqu'à 2003)
+        private String regexYamahaMotorcycle = "^JYA[A-Z0-9].*"; // Yamaha moto
+        private String regexYamahaSnowmobile = "^JYE[A-Z0-9].*"; // Yamaha motoneige
+        private String regexChevroletIsuzu = "^J81[A-Z0-9].*"; // Chevrolet/Geo voiture fabriqué par Isuzu
+        private String regexPontiacIsuzu = "^J87[A-Z0-9].*"; // Pontiac/Asüna voiture fabriqué par Isuzu pour GM Canada
+        private String regexChevroletTruckIsuzu = "^J8C[A-Z0-9].*"; // Chevrolet camion commercial fabriqué par Isuzu
+        private String regexGMCTruckIsuzu = "^J8T[A-Z0-9].*"; // GMC camion commercial fabriqué par Isuzu
+        private String regexChevroletLUVIsuzu = "^J8Z[A-Z0-9].*"; // Chevrolet LUV pickup fabriqué par Isuzu
+        private String regexDaewooGMKorea = "^KL[A-Z0-9].*"; // Daewoo GM Korea (Chevrolet/Alpheon)
+        private String regexHyundai = "^KM[A-Z0-9].*"; // Hyundai
+        private String regexHyundaiTruck = "^KMC[A-Z0-9].*"; // Hyundai camion
+        private String regexHyundaiSUV = "^KM8[A-Z0-9].*"; // Hyundai SUV
+        private String regexKiaCar = "^KNA[A-Z0-9].*"; // Kia voiture
+        private String regexKiaTruck = "^KNC[A-Z0-9].*"; // Kia camion
+        private String regexSsangYongSUV = "^KPT[A-Z0-9].*"; // SsangYong/KG Mobility SUV/MPV
+
+}
+
 
 }
 

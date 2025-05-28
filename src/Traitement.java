@@ -321,10 +321,10 @@ public class Traitement {
     public static String identifierFabricant(String sVin, VinStockageDonnee saisieRegion) {
         String sFabricant = "inconnu";
 
-        //Vérification de Fabricant via Regex
+        /*//Vérification de Fabricant via Regex
         if (saisieRegion.vinAudiSouthAfrica(sVin) == true) {
             sFabricant = "AudiSouthAfrica";
-        }
+        }*/
         return sFabricant;
     }
 }
