@@ -19,7 +19,7 @@ public class Traitement {
         } else {
             sContinent = "Inconnu";
         }
-    return sContinent;
+        return sContinent;
     }
 
     public static String identifierPays(String sContinent, String sVin, VinStockageDonnee saisieRegion) {
@@ -220,7 +220,7 @@ public class Traitement {
     public static String identifierAnnee(String sVin, VinStockageDonnee saisieRegion) {
         String sAnnee = "Inconnu";
 
-        switch (sVin.substring(9,10)){
+        switch (sVin.substring(9, 10)) {
             case "A":
                 sAnnee = "1980 ou 2010";
                 break;
@@ -321,10 +321,264 @@ public class Traitement {
     public static String identifierFabricant(String sVin, VinStockageDonnee saisieRegion) {
         String sFabricant = "inconnu";
 
-        /*//Vérification de Fabricant via Regex
-        if (saisieRegion.vinAudiSouthAfrica(sVin) == true) {
+        //Vérification de Fabricant via Regex
+        if (saisieRegion.vinAudiVolkswagenSA(sVin) == true) {
             sFabricant = "AudiSouthAfrica";
-        }*/
+        } else if (saisieRegion.vinFAWVehicleManufacturersSA(sVin) == true) {
+            sFabricant = "FAWVehiculeManufacturersSA";
+        } else if (saisieRegion.vinMANAutomotiveSouthAfrica(sVin) == true) {
+            sFabricant = "MANAutomotiveSouthAfrica";
+        }else if (saisieRegion.vinSAPVIN(sVin) == true) {
+            sFabricant = "SAPVIN";
+        } else if (saisieRegion.vinVolkswagenSouthAfrica(sVin) == true) {
+            sFabricant = "VolkswagenSouthAfrica";
+        } else if (saisieRegion.vinChallengerTrailerSA(sVin) == true) {
+            sFabricant = "ChallengerTrailerSA";
+        } else if (saisieRegion.vinTRTecSA(sVin) == true) {
+            sFabricant = "TRTecSA";
+        } else if (saisieRegion.vinMitsubishiColtMercedesSA(sVin) == true) {
+            sFabricant = "MitsubishiColtMercedesSA";
+        } else if (saisieRegion.vinBMWSouthernAfrica(sVin) == true) {
+            sFabricant = "BMWSouthernAfrica";
+        } else if (saisieRegion.vinIsuzuSouthAfrica(sVin) == true) {
+            sFabricant = "IsuzuSouthAfrica";
+        } else if (saisieRegion.vinHyundaiSouthAfrica(sVin) == true) {
+            sFabricant = "HyundaiSouthAfrica";
+        } else if (saisieRegion.vinBeamishBeachBuggiesSA(sVin) == true) {
+            sFabricant = "BeamishBeachBuggiesSA";
+        } else if (saisieRegion.vinMercedesBenzSA(sVin) == true) {
+            sFabricant = "MercedesBenzSA";
+        } else if (saisieRegion.vinUDTrucksSA(sVin) == true) {
+            sFabricant = "UDTrucksSA";
+        } else if (saisieRegion.vinGMSouthAfrica(sVin) == true) {
+            sFabricant = "GMSouthAfrica";
+        } else if (saisieRegion.vinNissanSouthAfrica(sVin) == true) {
+            sFabricant = "NissanSouthAfrica";
+        } else if (saisieRegion.vinRenaultSanderoSA(sVin) == true) {
+            sFabricant = "RenaultSanderoSA";
+        } else if (saisieRegion.vinTataSouthAfrica(sVin) == true) {
+            sFabricant = "TataSouthAfrica";
+        } else if (saisieRegion.vinBackdraftRacingSA(sVin) == true) {
+            sFabricant = "BackdraftRacingSA";
+        } else if (saisieRegion.vinFordSouthAfrica(sVin) == true) {
+            sFabricant = "FordSouthAfrica";
+        } else if (saisieRegion.vinMazdaSouthAfrica(sVin) == true) {
+            sFabricant = "MazdaSouthAfrica";
+        } else if (saisieRegion.vinBAICSouthAfrica(sVin) == true) {
+            sFabricant = "BAICSouthAfrica";
+        } else if (saisieRegion.vinFiatSouthAfrica(sVin) == true) {
+            sFabricant = "FiatSouthAfrica";
+        } else if (saisieRegion.vinHinoSouthAfrica(sVin) == true) {
+            sFabricant = "HinoSouthAfrica";
+        } else if (saisieRegion.vinHondaBalladeSA(sVin) == true) {
+            sFabricant = "HondaBalladeSA";
+        } else if (saisieRegion.vinToyotaSouthAfrica(sVin) == true) {
+            sFabricant = "ToyotaSouthAfrica";
+        }else if (saisieRegion.vinKIBOMotorcyclesKenya(sVin) == true) {
+            sFabricant = "KIBOMotorcyclesKenya";
+        } else if (saisieRegion.vinKiiraMotorsUganda(sVin) == true) {
+            sFabricant = "KiiraMotorsUganda";
+        } else if (saisieRegion.vinMercedesBenzAlgeria(sVin) == true) {
+            sFabricant = "MercedesBenzAlgeria";
+        } else if (saisieRegion.vinFiatAlgeria(sVin) == true) {
+            sFabricant = "FiatAlgeria";
+        } else if (saisieRegion.vinAurusMotorsRussia(sVin) == true) {
+            sFabricant = "AurusMotorsRussia";
+        } else if (saisieRegion.vinEvoluteRussia(sVin) == true) {
+            sFabricant = "EvoluteRussia";
+        } else if (saisieRegion.vinFordUSA(sVin) == true) {
+            sFabricant = "FordUSA";
+        } else if (saisieRegion.vinGMUSA(sVin) == true) {
+            sFabricant = "GMUSA";
+        } else if (saisieRegion.vinChryslerUSA(sVin) == true) {
+            sFabricant = "ChryslerUSA";
+        } else if (saisieRegion.vinTeslaUSA(sVin) == true) {
+            sFabricant = "TeslaUSA";
+        } else if (saisieRegion.vinHondaCanada(sVin) == true) {
+            sFabricant = "HondaCanada";
+        } else if (saisieRegion.vinToyotaCanada(sVin) == true) {
+            sFabricant = "ToyotaCanada";
+        } else if (saisieRegion.vinVolkswagenMexico(sVin) == true) {
+            sFabricant = "VolkswagenMexico";
+        } else if (saisieRegion.vinVolkswagenBrazil(sVin) == true) {
+            sFabricant = "VolkswagenBrazil";
+        } else if (saisieRegion.vinChevroletBrazil(sVin) == true) {
+            sFabricant = "ChevroletBrazil";
+        } else if (saisieRegion.vinFiatArgentina(sVin) == true) {
+            sFabricant = "FiatArgentina";
+        } else if (saisieRegion.vinFordArgentina(sVin) == true) {
+            sFabricant = "FordArgentina";
+        } else if (saisieRegion.vinPlymouthMPVMitsubishi(sVin) == true) {
+            sFabricant = "PlymouthMPVMitsubishi";
+        } else if (saisieRegion.vinPlymouthTruckMitsubishi(sVin) == true) {
+            sFabricant = "PlymouthTruckMitsubishi";
+        } else if (saisieRegion.vinIsuzuOasisHonda(sVin) == true) {
+            sFabricant = "IsuzuOasisHonda";
+        } else if (saisieRegion.vinSuzukiATV(sVin) == true) {
+            sFabricant = "SuzukiATV";
+        } else if (saisieRegion.vinKawasakiSuzuki(sVin) == true) {
+            sFabricant = "KawasakiSuzuki";
+        } else if (saisieRegion.vinSuzukiKFX400(sVin) == true) {
+            sFabricant = "SuzukiKFX400";
+        } else if (saisieRegion.vinSuzukiToyotaAcross(sVin) == true) {
+            sFabricant = "SuzukiToyotaAcross";
+        } else if (saisieRegion.vinSuzukiMotorcycle(sVin) == true) {
+            sFabricant = "SuzukiMotorcycle";
+        } else if (saisieRegion.vinSuzukiCar(sVin) == true) {
+            sFabricant = "SuzukiCar";
+        } else if (saisieRegion.vinSuzukiSUV(sVin) == true) {
+            sFabricant = "SuzukiSUV";
+        } else if (saisieRegion.vinSuzukiTruck(sVin) == true) {
+            sFabricant = "SuzukiTruck";
+        } else if (saisieRegion.vinToyotaBus(sVin) == true) {
+            sFabricant = "ToyotaBus";
+        } else if (saisieRegion.vinToyotaCar(sVin) == true) {
+            sFabricant = "ToyotaCar";
+        } else if (saisieRegion.vinToyotaMPVSUV(sVin) == true) {
+            sFabricant = "ToyotaMPVSUV";
+        } else if (saisieRegion.vinToyotaVanTruck(sVin) == true) {
+            sFabricant = "ToyotaVanTruck";
+        } else if (saisieRegion.vinToyotaMPVBus(sVin) == true) {
+            sFabricant = "ToyotaMPVBus";
+        } else if (saisieRegion.vinLexusCar(sVin) == true) {
+            sFabricant = "LexusCar";
+        } else if (saisieRegion.vinLexusSUV(sVin) == true) {
+            sFabricant = "LexusSUV";
+        } else if (saisieRegion.vinToyotaSUVSubaru(sVin) == true) {
+            sFabricant = "ToyotaSUVSubaru";
+        } else if (saisieRegion.vinToyotaTruckVan(sVin) == true) {
+            sFabricant = "ToyotaTruckVan";
+        } else if (saisieRegion.vinToyotaIncompleteVehicle(sVin) == true) {
+            sFabricant = "ToyotaIncompleteVehicle";
+        } else if (saisieRegion.vinMitsubishiFuso(sVin) == true) {
+            sFabricant = "MitsubishiFuso";
+        } else if (saisieRegion.vinYamahaMotorcycle(sVin) == true) {
+            sFabricant = "YamahaMotorcycle";
+        } else if (saisieRegion.vinYamahaSnowmobile(sVin) == true) {
+            sFabricant = "YamahaSnowmobile";
+        } else if (saisieRegion.vinChevroletIsuzu(sVin) == true) {
+            sFabricant = "ChevroletIsuzu";
+        } else if (saisieRegion.vinPontiacIsuzu(sVin) == true) {
+            sFabricant = "PontiacIsuzu";
+        } else if (saisieRegion.vinChevroletTruckIsuzu(sVin) == true) {
+            sFabricant = "ChevroletTruckIsuzu";
+        } else if (saisieRegion.vinGMCTruckIsuzu(sVin) == true) {
+            sFabricant = "GMCTruckIsuzu";
+        } else if (saisieRegion.vinChevroletLUVIsuzu(sVin) == true) {
+            sFabricant = "ChevroletLUVIsuzu";
+        } else if (saisieRegion.vinDaewooGMKorea(sVin) == true) {
+            sFabricant = "DaewooGMKorea";
+        } else if (saisieRegion.vinHyundai(sVin) == true) {
+            sFabricant = "Hyundai";
+        } else if (saisieRegion.vinHyundaiTruck(sVin) == true) {
+            sFabricant = "HyundaiTruck";
+        } else if (saisieRegion.vinHyundaiSUV(sVin) == true) {
+            sFabricant = "HyundaiSUV";
+        } else if (saisieRegion.vinKiaCar(sVin) == true) {
+            sFabricant = "KiaCar";
+        } else if (saisieRegion.vinKiaTruck(sVin) == true) {
+            sFabricant = "KiaTruck";
+        } else if (saisieRegion.vinSsangYongSUV(sVin) == true) {
+            sFabricant = "SsangYongSUV";
+        } else if (saisieRegion.vinMitsubishiJapon(sVin) == true) {
+        sFabricant = "MitsubishiJapon";
+        } else if (saisieRegion.vinMitsubishiAustralie(sVin) == true) {
+            sFabricant = "MitsubishiAustralie";
+        } else if (saisieRegion.vinIsuzuJapon(sVin) == true) {
+            sFabricant = "IsuzuJapon";
+        } else if (saisieRegion.vinIsuzuChine(sVin) == true) {
+            sFabricant = "IsuzuChine";
+        } else if (saisieRegion.vinNissanJapon(sVin) == true) {
+            sFabricant = "NissanJapon";
+        } else if (saisieRegion.vinNissanFrance(sVin) == true) {
+            sFabricant = "NissanFrance";
+        } else if (saisieRegion.vinNissanUK(sVin) == true) {
+            sFabricant = "NissanUK";
+        } else if (saisieRegion.vinNissanEspagne(sVin) == true) {
+            sFabricant = "NissanEspagne";
+        } else if (saisieRegion.vinNissanMexique(sVin) == true) {
+            sFabricant = "NissanMexique";
+        } else if (saisieRegion.vinNissanUSA(sVin) == true) {
+            sFabricant = "NissanUSA";
+        } else if (saisieRegion.vinMazdaJapon(sVin) == true) {
+            sFabricant = "MazdaJapon";
+        } else if (saisieRegion.vinMazdaUSA(sVin) == true) {
+            sFabricant = "MazdaUSA";
+        } else if (saisieRegion.vinMazdaMexique(sVin) == true) {
+            sFabricant = "MazdaMexique";
+        } else if (saisieRegion.vinHondaJapon(sVin) == true) {
+            sFabricant = "HondaJapon";
+        } else if (saisieRegion.vinHondaUK(sVin) == true) {
+            sFabricant = "HondaUK";
+        } else if (saisieRegion.vinHondaUSA(sVin) == true) {
+            sFabricant = "HondaUSA";
+        } else if (saisieRegion.vinHondaCanada(sVin) == true) {
+            sFabricant = "HondaCanada";
+        } else if (saisieRegion.vinToyotaJapon(sVin) == true) {
+            sFabricant = "ToyotaJapon";
+        } else if (saisieRegion.vinToyotaUK(sVin) == true) {
+            sFabricant = "ToyotaUK";
+        } else if (saisieRegion.vinToyotaTurquie(sVin) == true) {
+            sFabricant = "ToyotaTurquie";
+        } else if (saisieRegion.vinToyotaFrance(sVin) == true) {
+            sFabricant = "ToyotaFrance";
+        } else if (saisieRegion.vinToyotaCanada(sVin) == true) {
+            sFabricant = "ToyotaCanada";
+        } else if (saisieRegion.vinToyotaArgentine(sVin) == true) {
+            sFabricant = "ToyotaArgentine";
+        } else if (saisieRegion.vinToyotaBrésil(sVin) == true) {
+            sFabricant = "ToyotaBrésil";
+        } else if (saisieRegion.vinVolkswagenAllemagne(sVin) == true) {
+            sFabricant = "VolkswagenAllemagne";
+        } else if (saisieRegion.vinVolkswagenEspagne(sVin) == true) {
+            sFabricant = "VolkswagenEspagne";
+        } else if (saisieRegion.vinVolkswagenMexique(sVin) == true) {
+            sFabricant = "VolkswagenMexique";
+        } else if (saisieRegion.vinVolkswagenBrésil(sVin) == true) {
+            sFabricant = "VolkswagenBrésil";
+        } else if (saisieRegion.vinRenaultFrance(sVin) == true) {
+            sFabricant = "RenaultFrance";
+        } else if (saisieRegion.vinRenaultRoumanie(sVin) == true) {
+            sFabricant = "RenaultRoumanie";
+        } else if (saisieRegion.vinRenaultArgentine(sVin) == true) {
+            sFabricant = "RenaultArgentine";
+        } else if (saisieRegion.vinRenaultColombie(sVin) == true) {
+            sFabricant = "RenaultColombie";
+        } else if (saisieRegion.vinPeugeotFrance(sVin) == true) {
+            sFabricant = "PeugeotFrance";
+        } else if (saisieRegion.vinPeugeotUK(sVin) == true) {
+            sFabricant = "PeugeotUK";
+        } else if (saisieRegion.vinPeugeotArgentine(sVin) == true) {
+            sFabricant = "PeugeotArgentine";
+        } else if (saisieRegion.vinPeugeotChili(sVin) == true) {
+            sFabricant = "PeugeotChili";
+        } else if (saisieRegion.vinFiatItalie(sVin) == true) {
+            sFabricant = "FiatItalie";
+        } else if (saisieRegion.vinFiatArgentine(sVin) == true) {
+            sFabricant = "FiatArgentine";
+        } else if (saisieRegion.vinFiatTurquie(sVin) == true) {
+            sFabricant = "FiatTurquie";
+        } else if (saisieRegion.vinFiatAlgerie(sVin) == true) {
+            sFabricant = "FiatAlgerie";
+        } else if (saisieRegion.vinFiatBrésil(sVin) == true) {
+            sFabricant = "FiatBrésil";
+        } else if (saisieRegion.vinVolvoSuede(sVin) == true) {
+            sFabricant = "VolvoSuede";
+        } else if (saisieRegion.vinScaniaSuede(sVin) == true) {
+            sFabricant = "ScaniaSuede";
+        } else if (saisieRegion.vinDAFPaysBas(sVin) == true) {
+            sFabricant = "DAFPaysBas";
+        } else if (saisieRegion.vinMANAllemagne(sVin) == true) {
+            sFabricant = "MANAllemagne";
+        } else if (saisieRegion.vinMANChine(sVin) == true) {
+            sFabricant = "MANChine";
+        } else if (saisieRegion.vinTeslaUSA(sVin) == true) {
+            sFabricant = "TeslaUSA";
+        } else if (saisieRegion.vinTeslaChine(sVin) == true) {
+            sFabricant = "TeslaChine";
+        }
+
+
         return sFabricant;
     }
 }

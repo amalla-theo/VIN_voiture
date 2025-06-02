@@ -382,8 +382,10 @@ public class VinStockageDonnee {
         return sVin.matches(regexTrinidadTobago);
     }
 
+   // public boolean vinAudiVolkswagenSA(String sVin) {return sVin.matches(regexAudiVolkswagenSA);}
+
+
     //Regex Fabricant
-    public class VinFabricant {
 
         private String regexAudiVolkswagenSA = "^AAA[A-Z0-9].*"; // Audi fabriqué par Volkswagen South Africa
         private String regexFAWVehicleManufacturersSA = "^AAK[A-Z0-9].*"; // FAW Vehicle Manufacturers South Africa
@@ -417,12 +419,8 @@ public class VinStockageDonnee {
         private String regexFiatAlgeria = "^BRY[A-Z0-9].*"; // Fiat Algérie
         private String regexAurusMotorsRussia = "^EAA[A-Z0-9].*"; // Aurus Motors (Russie)
         private String regexEvoluteRussia = "^EAN[A-Z0-9].*"; // Evolute (Russie)
-        private String regexFordUSA = "^1F[A-Z0-9].*"; // Ford USA
         private String regexGMUSA = "^1G[A-Z0-9].*"; // General Motors USA
         private String regexChryslerUSA = "^1C[A-Z0-9].*"; // Chrysler USA
-        private String regexTeslaUSA = "^5Y[A-Z0-9].*"; // Tesla USA
-        private String regexHondaCanada = "^2H[A-Z0-9].*"; // Honda Canada
-        private String regexToyotaCanada = "^2T[A-Z0-9].*"; // Toyota Canada
         private String regexVolkswagenMexico = "^3VW[A-Z0-9].*"; // Volkswagen Mexique
         private String regexVolkswagenBrazil = "^9BW[A-Z0-9].*"; // Volkswagen Brésil
         private String regexChevroletBrazil = "^9BG[A-Z0-9].*"; // Chevrolet Brésil
@@ -467,8 +465,609 @@ public class VinStockageDonnee {
         private String regexKiaTruck = "^KNC[A-Z0-9].*"; // Kia camion
         private String regexSsangYongSUV = "^KPT[A-Z0-9].*"; // SsangYong/KG Mobility SUV/MPV
 
-}
+
+    private String regexAudiAllemagne = "^WAU[A-Z0-9].*"; // Audi Allemagne
+    private String regexAudiHongrie = "^TRU[A-Z0-9].*"; // Audi Hongrie
+
+    private String regexBMWAllemagne = "^(WBA|WBS)[A-Z0-9].*"; // BMW Allemagne
+    private String regexBMWUSA = "^4US[A-Z0-9].*"; // BMW USA
+
+    private String regexMercedesBenzAllemagne = "^WDB[A-Z0-9].*"; // Mercedes-Benz Allemagne
+    private String regexMercedesBenzMcLaren = "^WDD[A-Z0-9].*"; // Mercedes-Benz McLaren
+    private String regexMercedesBenzAlgerie = "^BR1[A-Z0-9].*"; // Mercedes-Benz Algérie
+    private String regexMercedesBenzTurquie = "^NLE[A-Z0-9].*"; // Mercedes-Benz Camions Turquie
+
+    private String regexFordAllemagne = "^WF0[A-Z0-9].*"; // Ford Allemagne
+    private String regexFordEspagne = "^VS6[A-Z0-9].*"; // Ford Espagne
+    private String regexFordUSA = "^(1FA|1FB|1FC|1FD|1FM|1FT)[A-Z0-9].*"; // Ford USA
+    private String regexFordCanada = "^(2FA|2FB|2FC|2FM|2FT)[A-Z0-9].*"; // Ford Canada
+    private String regexFordAustralie = "^6F[A-Z0-9].*"; // Ford Australie
+
+    private String regexVolkswagenAllemagne = "^(WVW|WV1|WV2)[A-Z0-9].*"; // Volkswagen Allemagne
+    private String regexVolkswagenEspagne = "^VWV[A-Z0-9].*"; // Volkswagen Espagne
+    private String regexVolkswagenMexique = "^3VW[A-Z0-9].*"; // Volkswagen Mexique
+    private String regexVolkswagenBrésil = "^9BW[A-Z0-9].*"; // Volkswagen Brésil
+
+    private String regexRenaultFrance = "^VF1[A-Z0-9].*"; // Renault France
+    private String regexRenaultRoumanie = "^UU1[A-Z0-9].*"; // Renault Dacia Roumanie
+    private String regexRenaultArgentine = "^8A1[A-Z0-9].*"; // Renault Argentine
+    private String regexRenaultColombie = "^9FB[A-Z0-9].*"; // Renault Colombie
+
+    private String regexPeugeotFrance = "^VF3[A-Z0-9].*"; // Peugeot France
+    private String regexPeugeotUK = "^SDB[A-Z0-9].*"; // Peugeot UK
+    private String regexPeugeotArgentine = "^8AD[A-Z0-9].*"; // Peugeot Argentine
+    private String regexPeugeotChili = "^8GD[A-Z0-9].*"; // Peugeot Chili
+
+    private String regexToyotaJapon = "^(JT|JTB|JTD|JTE|JTF|JTG)[A-Z0-9].*"; // Toyota Japon
+    private String regexToyotaUK = "^SB1[A-Z0-9].*"; // Toyota UK
+    private String regexToyotaTurquie = "^NMT[A-Z0-9].*"; // Toyota Turquie
+    private String regexToyotaFrance = "^VNK[A-Z0-9].*"; // Toyota France
+    private String regexToyotaCanada = "^2T[A-Z0-9].*"; // Toyota Canada
+    private String regexToyotaArgentine = "^8AJ[A-Z0-9].*"; // Toyota Argentine
+    private String regexToyotaBrésil = "^93R[A-Z0-9].*"; // Toyota Brésil
+
+    private String regexNissanJapon = "^JN[A-Z0-9].*"; // Nissan Japon
+    private String regexNissanFrance = "^VNV[A-Z0-9].*"; // Nissan France
+    private String regexNissanUK = "^SJN[A-Z0-9].*"; // Nissan UK
+    private String regexNissanEspagne = "^VSG[A-Z0-9].*"; // Nissan Espagne
+    private String regexNissanMexique = "^3N[A-Z0-9].*"; // Nissan Mexique
+    private String regexNissanUSA = "^5N1[A-Z0-9].*"; // Nissan USA
+
+    private String regexHondaJapon = "^JH[A-Z0-9].*"; // Honda Japon
+    private String regexHondaUK = "^SHS[A-Z0-9].*"; // Honda UK
+    private String regexHondaUSA = "^(1H|5F)[A-Z0-9].*"; // Honda USA
+    private String regexHondaCanada = "^(2HG|2HK)[A-Z0-9].*"; // Honda Canada
+
+    private String regexMazdaJapon = "^JMZ[A-Z0-9].*"; // Mazda Japon
+    private String regexMazdaUSA = "^(1YV|4F)[A-Z0-9].*"; // Mazda USA
+    private String regexMazdaMexique = "^3MD[A-Z0-9].*"; // Mazda Mexique
+
+    private String regexHyundaiCoree = "^(KMH|KM8)[A-Z0-9].*"; // Hyundai Corée du Sud
+    private String regexHyundaiCanada = "^2HM[A-Z0-9].*"; // Hyundai Canada
+    private String regexHyundaiUSA = "^5NP[A-Z0-9].*"; // Hyundai USA
+
+    private String regexKiaCoree = "^(KNA|KNB|KNC)[A-Z0-9].*"; // Kia Corée du Sud
+
+    private String regexIsuzuJapon = "^JA[A-Z0-9].*"; // Isuzu Japon
+    private String regexIsuzuChine = "^LZE[A-Z0-9].*"; // Isuzu Guangzhou, Chine
+
+    private String regexMitsubishiJapon = "^JMB[A-Z0-9].*"; // Mitsubishi Japon
+    private String regexMitsubishiAustralie = "^6MM[A-Z0-9].*"; // Mitsubishi Australie
+
+    private String regexFiatItalie = "^ZFA[A-Z0-9].*"; // Fiat Italie
+    private String regexFiatArgentine = "^8AP[A-Z0-9].*"; // Fiat Argentine
+    private String regexFiatTurquie = "^NM4[A-Z0-9].*"; // Fiat Turquie
+    private String regexFiatAlgerie = "^BRY[A-Z0-9].*"; // Fiat Algérie
+    private String regexFiatBrésil = "^9BD[A-Z0-9].*"; // Fiat Brésil
+
+    private String regexVolvoSuede = "^(YV1|YV2|YV3|YV4)[A-Z0-9].*"; // Volvo Suède
+
+    private String regexScaniaSuede = "^YS2[A-Z0-9].*"; // Scania Suède
+
+    private String regexDAFPaysBas = "^XLR[A-Z0-9].*"; // DAF Trucks Pays-Bas
+
+    private String regexMANAllemagne = "^WMA[A-Z0-9].*"; // MAN Allemagne
+    private String regexMANChine = "^LZM[A-Z0-9].*"; // MAN Chine
+
+    private String regexTeslaUSA = "^5YJ[A-Z0-9].*"; // Tesla USA
+    private String regexTeslaChine = "^LRW[A-Z0-9].*"; // Tesla (Gigafactory Shanghai)
 
 
+    //Tests fabricant
+        public boolean vinAudiVolkswagenSA(String sVin) {
+            return sVin.matches(regexAudiVolkswagenSA);
+        }
+    public boolean vinFAWVehicleManufacturersSA(String sVin) {
+        return sVin.matches(regexFAWVehicleManufacturersSA);
+    }
+
+    public boolean vinMANAutomotiveSouthAfrica(String sVin) {
+        return sVin.matches(regexMANAutomotiveSouthAfrica);
+    }
+
+    public boolean vinSAPVIN(String sVin) {
+        return sVin.matches(regexSAPVIN);
+    }
+
+    public boolean vinVolkswagenSouthAfrica(String sVin) {
+        return sVin.matches(regexVolkswagenSouthAfrica);
+    }
+
+    public boolean vinChallengerTrailerSA(String sVin) {
+        return sVin.matches(regexChallengerTrailerSA);
+    }
+
+    public boolean vinTRTecSA(String sVin) {
+        return sVin.matches(regexTRTecSA);
+    }
+    public boolean vinMitsubishiColtMercedesSA(String sVin) {
+        return sVin.matches(regexMitsubishiColtMercedesSA);
+    }
+
+    public boolean vinBMWSouthernAfrica(String sVin) {
+        return sVin.matches(regexBMWSouthernAfrica);
+    }
+
+    public boolean vinIsuzuSouthAfrica(String sVin) {
+        return sVin.matches(regexIsuzuSouthAfrica);
+    }
+
+    public boolean vinHyundaiSouthAfrica(String sVin) {
+        return sVin.matches(regexHyundaiSouthAfrica);
+    }
+
+    public boolean vinBeamishBeachBuggiesSA(String sVin) {
+        return sVin.matches(regexBeamishBeachBuggiesSA);
+    }
+
+    public boolean vinMercedesBenzSA(String sVin) {
+        return sVin.matches(regexMercedesBenzSA);
+    }
+
+    public boolean vinUDTrucksSA(String sVin) {
+        return sVin.matches(regexUDTrucksSA);
+    }
+
+    public boolean vinGMSouthAfrica(String sVin) {
+        return sVin.matches(regexGMSouthAfrica);
+    }
+
+    public boolean vinNissanSouthAfrica(String sVin) {
+        return sVin.matches(regexNissanSouthAfrica);
+    }
+
+    public boolean vinRenaultSanderoSA(String sVin) {
+        return sVin.matches(regexRenaultSanderoSA);
+    }
+
+    public boolean vinTataSouthAfrica(String sVin) {
+        return sVin.matches(regexTataSouthAfrica);
+    }
+
+    public boolean vinBackdraftRacingSA(String sVin) {
+        return sVin.matches(regexBackdraftRacingSA);
+    }
+
+    public boolean vinFordSouthAfrica(String sVin) {
+        return sVin.matches(regexFordSouthAfrica);
+    }
+
+    public boolean vinMazdaSouthAfrica(String sVin) {
+        return sVin.matches(regexMazdaSouthAfrica);
+    }
+
+    public boolean vinBAICSouthAfrica(String sVin) {
+        return sVin.matches(regexBAICSouthAfrica);
+    }
+
+    public boolean vinFiatSouthAfrica(String sVin) {
+        return sVin.matches(regexFiatSouthAfrica);
+    }
+
+    public boolean vinHinoSouthAfrica(String sVin) {
+        return sVin.matches(regexHinoSouthAfrica);
+    }
+
+    public boolean vinHondaBalladeSA(String sVin) {
+        return sVin.matches(regexHondaBalladeSA);
+    }
+
+    public boolean vinToyotaSouthAfrica(String sVin) {
+        return sVin.matches(regexToyotaSouthAfrica);
+    }
+
+    public boolean vinKIBOMotorcyclesKenya(String sVin) {
+        return sVin.matches(regexKIBOMotorcyclesKenya);
+    }
+
+    public boolean vinKiiraMotorsUganda(String sVin) {
+        return sVin.matches(regexKiiraMotorsUganda);
+    }
+
+    public boolean vinMercedesBenzAlgeria(String sVin) {
+        return sVin.matches(regexMercedesBenzAlgeria);
+    }
+
+    public boolean vinFiatAlgeria(String sVin) {
+        return sVin.matches(regexFiatAlgeria);
+    }
+
+    public boolean vinAurusMotorsRussia(String sVin) {
+        return sVin.matches(regexAurusMotorsRussia);
+    }
+
+    public boolean vinEvoluteRussia(String sVin) {
+        return sVin.matches(regexEvoluteRussia);
+    }
+
+    public boolean vinFordUSA(String sVin) {
+        return sVin.matches(regexFordUSA);
+    }
+
+    public boolean vinGMUSA(String sVin) {
+        return sVin.matches(regexGMUSA);
+    }
+
+    public boolean vinChryslerUSA(String sVin) {
+        return sVin.matches(regexChryslerUSA);
+    }
+
+    public boolean vinTeslaUSA(String sVin) {
+        return sVin.matches(regexTeslaUSA);
+    }
+
+    public boolean vinHondaCanada(String sVin) {
+        return sVin.matches(regexHondaCanada);
+    }
+
+    public boolean vinToyotaCanada(String sVin) {
+        return sVin.matches(regexToyotaCanada);
+    }
+
+    public boolean vinVolkswagenMexico(String sVin) {
+        return sVin.matches(regexVolkswagenMexico);
+    }
+
+    public boolean vinVolkswagenBrazil(String sVin) {
+        return sVin.matches(regexVolkswagenBrazil);
+    }
+
+    public boolean vinChevroletBrazil(String sVin) {
+        return sVin.matches(regexChevroletBrazil);
+    }
+
+    public boolean vinFiatArgentina(String sVin) {
+        return sVin.matches(regexFiatArgentina);
+    }
+
+    public boolean vinFordArgentina(String sVin) {
+        return sVin.matches(regexFordArgentina);
+    }
+
+    public boolean vinPlymouthMPVMitsubishi(String sVin) {
+        return sVin.matches(regexPlymouthMPVMitsubishi);
+    }
+
+    public boolean vinPlymouthTruckMitsubishi(String sVin) {
+        return sVin.matches(regexPlymouthTruckMitsubishi);
+    }
+
+    public boolean vinIsuzuOasisHonda(String sVin) {
+        return sVin.matches(regexIsuzuOasisHonda);
+    }
+
+    public boolean vinSuzukiATV(String sVin) {
+        return sVin.matches(regexSuzukiATV);
+    }
+
+    public boolean vinKawasakiSuzuki(String sVin) {
+        return sVin.matches(regexKawasakiSuzuki);
+    }
+
+    public boolean vinSuzukiKFX400(String sVin) {
+        return sVin.matches(regexSuzukiKFX400);
+    }
+
+    public boolean vinSuzukiToyotaAcross(String sVin) {
+        return sVin.matches(regexSuzukiToyotaAcross);
+    }
+
+    public boolean vinSuzukiMotorcycle(String sVin) {
+        return sVin.matches(regexSuzukiMotorcycle);
+    }
+
+    public boolean vinSuzukiCar(String sVin) {
+        return sVin.matches(regexSuzukiCar);
+    }
+
+    public boolean vinSuzukiSUV(String sVin) {
+        return sVin.matches(regexSuzukiSUV);
+    }
+
+    public boolean vinSuzukiTruck(String sVin) {
+        return sVin.matches(regexSuzukiTruck);
+    }
+
+    public boolean vinToyotaBus(String sVin) {
+        return sVin.matches(regexToyotaBus);
+    }
+
+    public boolean vinToyotaCar(String sVin) {
+        return sVin.matches(regexToyotaCar);
+    }
+
+    public boolean vinToyotaMPVSUV(String sVin) {
+        return sVin.matches(regexToyotaMPVSUV);
+    }
+
+    public boolean vinToyotaVanTruck(String sVin) {
+        return sVin.matches(regexToyotaVanTruck);
+    }
+
+    public boolean vinToyotaMPVBus(String sVin) {
+        return sVin.matches(regexToyotaMPVBus);
+    }
+
+    public boolean vinLexusCar(String sVin) {
+        return sVin.matches(regexLexusCar);
+    }
+
+    public boolean vinLexusSUV(String sVin) {
+        return sVin.matches(regexLexusSUV);
+    }
+
+    public boolean vinToyotaSUVSubaru(String sVin) {
+        return sVin.matches(regexToyotaSUVSubaru);
+    }
+
+    public boolean vinToyotaTruckVan(String sVin) {
+        return sVin.matches(regexToyotaTruckVan);
+    }
+
+    public boolean vinToyotaIncompleteVehicle(String sVin) {
+        return sVin.matches(regexToyotaIncompleteVehicle);
+    }
+
+    public boolean vinMitsubishiFuso(String sVin) {
+        return sVin.matches(regexMitsubishiFuso);
+    }
+
+    public boolean vinYamahaMotorcycle(String sVin) {
+        return sVin.matches(regexYamahaMotorcycle);
+    }
+
+    public boolean vinYamahaSnowmobile(String sVin) {
+        return sVin.matches(regexYamahaSnowmobile);
+    }
+
+    public boolean vinChevroletIsuzu(String sVin) {
+        return sVin.matches(regexChevroletIsuzu);
+    }
+
+    public boolean vinPontiacIsuzu(String sVin) {
+        return sVin.matches(regexPontiacIsuzu);
+    }
+
+    public boolean vinChevroletTruckIsuzu(String sVin) {
+        return sVin.matches(regexChevroletTruckIsuzu);
+    }
+
+    public boolean vinGMCTruckIsuzu(String sVin) {
+        return sVin.matches(regexGMCTruckIsuzu);
+    }
+
+    public boolean vinChevroletLUVIsuzu(String sVin) {
+        return sVin.matches(regexChevroletLUVIsuzu);
+    }
+
+    public boolean vinDaewooGMKorea(String sVin) {
+        return sVin.matches(regexDaewooGMKorea);
+    }
+
+    public boolean vinHyundai(String sVin) {
+        return sVin.matches(regexHyundai);
+    }
+
+    public boolean vinHyundaiTruck(String sVin) {
+        return sVin.matches(regexHyundaiTruck);
+    }
+
+    public boolean vinHyundaiSUV(String sVin) {
+        return sVin.matches(regexHyundaiSUV);
+    }
+
+    public boolean vinKiaCar(String sVin) {
+        return sVin.matches(regexKiaCar);
+    }
+
+    public boolean vinKiaTruck(String sVin) {
+        return sVin.matches(regexKiaTruck);
+    }
+
+    public boolean vinSsangYongSUV(String sVin) {
+        return sVin.matches(regexSsangYongSUV);
+    }
+
+    public boolean vinHyundaiCoree(String sVin) {
+        return sVin.matches(regexHyundaiCoree);
+    }
+
+    public boolean vinHyundaiCanada(String sVin) {
+        return sVin.matches(regexHyundaiCanada);
+    }
+
+    public boolean vinHyundaiUSA(String sVin) {
+        return sVin.matches(regexHyundaiUSA);
+    }
+
+    public boolean vinKiaCoree(String sVin) {
+        return sVin.matches(regexKiaCoree);
+    }
+
+    public boolean vinMitsubishiJapon(String sVin) {
+        return sVin.matches(regexMitsubishiJapon);
+    }
+
+    public boolean vinMitsubishiAustralie(String sVin) {
+        return sVin.matches(regexMitsubishiAustralie);
+    }
+
+    public boolean vinIsuzuJapon(String sVin) {
+        return sVin.matches(regexIsuzuJapon);
+    }
+
+    public boolean vinIsuzuChine(String sVin) {
+        return sVin.matches(regexIsuzuChine);
+    }
+
+    public boolean vinNissanJapon(String sVin) {
+        return sVin.matches(regexNissanJapon);
+    }
+
+    public boolean vinNissanFrance(String sVin) {
+        return sVin.matches(regexNissanFrance);
+    }
+
+    public boolean vinNissanUK(String sVin) {
+        return sVin.matches(regexNissanUK);
+    }
+
+    public boolean vinNissanEspagne(String sVin) {
+        return sVin.matches(regexNissanEspagne);
+    }
+
+    public boolean vinNissanMexique(String sVin) {
+        return sVin.matches(regexNissanMexique);
+    }
+
+    public boolean vinNissanUSA(String sVin) {
+        return sVin.matches(regexNissanUSA);
+    }
+
+    public boolean vinMazdaJapon(String sVin) {
+        return sVin.matches(regexMazdaJapon);
+    }
+
+    public boolean vinMazdaUSA(String sVin) {
+        return sVin.matches(regexMazdaUSA);
+    }
+
+    public boolean vinMazdaMexique(String sVin) {
+        return sVin.matches(regexMazdaMexique);
+    }
+
+    public boolean vinHondaJapon(String sVin) {
+        return sVin.matches(regexHondaJapon);
+    }
+
+    public boolean vinHondaUK(String sVin) {
+        return sVin.matches(regexHondaUK);
+    }
+
+    public boolean vinHondaUSA(String sVin) {
+        return sVin.matches(regexHondaUSA);
+    }
+
+    public boolean vinToyotaJapon(String sVin) {
+        return sVin.matches(regexToyotaJapon);
+    }
+
+    public boolean vinToyotaUK(String sVin) {
+        return sVin.matches(regexToyotaUK);
+    }
+
+    public boolean vinToyotaTurquie(String sVin) {
+        return sVin.matches(regexToyotaTurquie);
+    }
+
+    public boolean vinToyotaFrance(String sVin) {
+        return sVin.matches(regexToyotaFrance);
+    }
+
+    public boolean vinToyotaArgentine(String sVin) {
+        return sVin.matches(regexToyotaArgentine);
+    }
+
+    public boolean vinToyotaBrésil(String sVin) {
+        return sVin.matches(regexToyotaBrésil);
+    }
+
+    public boolean vinVolkswagenAllemagne(String sVin) {
+        return sVin.matches(regexVolkswagenAllemagne);
+    }
+
+    public boolean vinVolkswagenEspagne(String sVin) {
+        return sVin.matches(regexVolkswagenEspagne);
+    }
+
+    public boolean vinVolkswagenMexique(String sVin) {
+        return sVin.matches(regexVolkswagenMexique);
+    }
+
+    public boolean vinVolkswagenBrésil(String sVin) {
+        return sVin.matches(regexVolkswagenBrésil);
+    }
+
+    public boolean vinRenaultFrance(String sVin) {
+        return sVin.matches(regexRenaultFrance);
+    }
+
+    public boolean vinRenaultRoumanie(String sVin) {
+        return sVin.matches(regexRenaultRoumanie);
+    }
+
+    public boolean vinRenaultArgentine(String sVin) {
+        return sVin.matches(regexRenaultArgentine);
+    }
+
+    public boolean vinRenaultColombie(String sVin) {
+        return sVin.matches(regexRenaultColombie);
+    }
+
+    public boolean vinPeugeotFrance(String sVin) {
+        return sVin.matches(regexPeugeotFrance);
+    }
+
+    public boolean vinPeugeotUK(String sVin) {
+        return sVin.matches(regexPeugeotUK);
+    }
+
+    public boolean vinPeugeotArgentine(String sVin) {
+        return sVin.matches(regexPeugeotArgentine);
+    }
+
+    public boolean vinPeugeotChili(String sVin) {
+        return sVin.matches(regexPeugeotChili);
+    }
+
+    public boolean vinFiatItalie(String sVin) {
+        return sVin.matches(regexFiatItalie);
+    }
+
+    public boolean vinFiatArgentine(String sVin) {
+        return sVin.matches(regexFiatArgentine);
+    }
+
+    public boolean vinFiatTurquie(String sVin) {
+        return sVin.matches(regexFiatTurquie);
+    }
+
+    public boolean vinFiatAlgerie(String sVin) {
+        return sVin.matches(regexFiatAlgerie);
+    }
+
+    public boolean vinFiatBrésil(String sVin) {
+        return sVin.matches(regexFiatBrésil);
+    }
+
+    public boolean vinVolvoSuede(String sVin) {
+        return sVin.matches(regexVolvoSuede);
+    }
+
+    public boolean vinScaniaSuede(String sVin) {
+        return sVin.matches(regexScaniaSuede);
+    }
+
+    public boolean vinDAFPaysBas(String sVin) {
+        return sVin.matches(regexDAFPaysBas);
+    }
+
+    public boolean vinMANAllemagne(String sVin) {
+        return sVin.matches(regexMANAllemagne);
+    }
+
+    public boolean vinMANChine(String sVin) {
+        return sVin.matches(regexMANChine);
+    }
+
+
+
+    public boolean vinTeslaChine(String sVin) {
+        return sVin.matches(regexTeslaChine);
+    }
+
+
+
 }
+
 
